@@ -1,4 +1,10 @@
-       int n=strs.size();
+ /*Write a function to find the longest common suffix string amongst an array of strings.
+If there is no common suffix, return an empty string "".*/
+
+class Solution {
+public:
+    string longestCommonSuffix(vector<string>& strs) {
+        int n=strs.size();
         if(n==0)return "";
         if(n==1)return strs[0];
         for(int i=0;i<n;i++)reverse(strs[i].begin(),strs[i].end());
@@ -10,3 +16,5 @@
         string lcs=first.substr(0,i);
         reverse(lcs.begin(),lcs.end());
         return lcs;
+    }
+};
