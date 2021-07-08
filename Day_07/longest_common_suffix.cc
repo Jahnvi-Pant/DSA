@@ -1,0 +1,12 @@
+       int n=strs.size();
+        if(n==0)return "";
+        if(n==1)return strs[0];
+        for(int i=0;i<n;i++)reverse(strs[i].begin(),strs[i].end());
+        sort(strs.begin(), strs.end());
+        int lcs_len=min(strs[0].size(),strs[n-1].size());
+        string first=strs[0],last=strs[n-1];
+        int i=0;
+        for(i=0;i<lcs_len;i++) if(first[i]!=last[i]) break;
+        string lcs=first.substr(0,i);
+        reverse(lcs.begin(),lcs.end());
+        return lcs;
